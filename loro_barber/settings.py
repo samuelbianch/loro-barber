@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from env import credentials
+#from env import credentials
 from django.shortcuts import redirect
-from barbearia.views import index
+from lavagem.views import index
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = credentials.get('django_secret_key')
+SECRET_KEY = "django-insecure-hcb_w@)yvrr#-n&bu!t!=r4&o+n)z%j$zf#)8+2(02av(@-_g1" #credentials.get('django_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'barbearia',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lavagem',
 ]
 
 MIDDLEWARE = [
@@ -146,7 +146,7 @@ JAZZMIN_SETTINGS = {
         {"model": "auth.User"},
     ],
     #List of the respective apps to show in admin
-    "order_with_respect_to": ["auth", "barbearia.barbeiro", "barbearia.usuario", "barbearia.servico"],
+    #"order_with_respect_to": ["auth", "barbearia.barbeiro", "barbearia.usuario", "barbearia.servico"],
     #############
     # Side Menu #
     #############

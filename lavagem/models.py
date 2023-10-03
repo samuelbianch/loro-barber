@@ -47,3 +47,13 @@ class Servico(models.Model):
         ordering = ['nome']
         verbose_name = 'Serviço'
         verbose_name_plural = 'Serviços'
+
+class Assinatura(models.Model):
+    "Modelo de serviço de assinaturas"
+    nome = models.CharField(max_length=100)
+    valor = models.DecimalField(decimal_places=2)
+    descricao = models.TextField()
+    ativa = models.BooleanField()
+    
+    def __str__(self):
+        return self.nome
